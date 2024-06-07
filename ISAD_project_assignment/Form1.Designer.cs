@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.ComboCusSearch = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnCusDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnCuspdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCusSearch = new Guna.UI2.WinForms.Guna2Button();
             this.btnCussave = new Guna.UI2.WinForms.Guna2Button();
             this.txtCusCon = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCusName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,29 +42,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TableCus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ComboCusSearch
-            // 
-            this.ComboCusSearch.BackColor = System.Drawing.Color.Transparent;
-            this.ComboCusSearch.BorderRadius = 20;
-            this.ComboCusSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ComboCusSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboCusSearch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ComboCusSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ComboCusSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ComboCusSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.ComboCusSearch.ItemHeight = 30;
-            this.ComboCusSearch.Items.AddRange(new object[] {
-            "ID",
-            "NAME",
-            "CONTACT"});
-            this.ComboCusSearch.Location = new System.Drawing.Point(809, 429);
-            this.ComboCusSearch.Name = "ComboCusSearch";
-            this.ComboCusSearch.Size = new System.Drawing.Size(122, 36);
-            this.ComboCusSearch.TabIndex = 28;
             // 
             // btnCusDelete
             // 
@@ -105,25 +84,6 @@
             this.btnCuspdate.TabIndex = 25;
             this.btnCuspdate.Text = "UPDATE";
             this.btnCuspdate.Click += new System.EventHandler(this.btnCuspdate_Click);
-            // 
-            // btnCusSearch
-            // 
-            this.btnCusSearch.AutoRoundedCorners = true;
-            this.btnCusSearch.BorderRadius = 17;
-            this.btnCusSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCusSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCusSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCusSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCusSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCusSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCusSearch.ForeColor = System.Drawing.Color.White;
-            this.btnCusSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnCusSearch.Image")));
-            this.btnCusSearch.Location = new System.Drawing.Point(809, 386);
-            this.btnCusSearch.Name = "btnCusSearch";
-            this.btnCusSearch.Size = new System.Drawing.Size(122, 37);
-            this.btnCusSearch.TabIndex = 24;
-            this.btnCusSearch.Text = "SEARCH";
-            this.btnCusSearch.Click += new System.EventHandler(this.btnCusSearch_Click);
             // 
             // btnCussave
             // 
@@ -226,11 +186,11 @@
             this.TableCus.AllowUserToDeleteRows = false;
             this.TableCus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TableCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TableCus.Location = new System.Drawing.Point(39, 471);
+            this.TableCus.Location = new System.Drawing.Point(39, 458);
             this.TableCus.Name = "TableCus";
             this.TableCus.ReadOnly = true;
             this.TableCus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TableCus.Size = new System.Drawing.Size(1046, 319);
+            this.TableCus.Size = new System.Drawing.Size(1046, 332);
             this.TableCus.TabIndex = 16;
             this.TableCus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableCus_CellClick);
             // 
@@ -302,20 +262,47 @@
             this.guna2GradientButton1.UseTransparentBackground = true;
             this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
+            // searchBox
+            // 
+            this.searchBox.AutoRoundedCorners = true;
+            this.searchBox.BorderRadius = 17;
+            this.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.DefaultText = "Search";
+            this.searchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.searchBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.ForeColor = System.Drawing.Color.White;
+            this.searchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchBox.IconLeft")));
+            this.searchBox.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.searchBox.Location = new System.Drawing.Point(817, 387);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.PasswordChar = '\0';
+            this.searchBox.PlaceholderText = "";
+            this.searchBox.SelectedText = "";
+            this.searchBox.Size = new System.Drawing.Size(122, 36);
+            this.searchBox.TabIndex = 34;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(218)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1103, 802);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.ComboCusSearch);
             this.Controls.Add(this.btnCusDelete);
             this.Controls.Add(this.btnCuspdate);
-            this.Controls.Add(this.btnCusSearch);
             this.Controls.Add(this.btnCussave);
             this.Controls.Add(this.txtCusCon);
             this.Controls.Add(this.txtCusName);
@@ -334,11 +321,8 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2ComboBox ComboCusSearch;
         private Guna.UI2.WinForms.Guna2Button btnCusDelete;
         private Guna.UI2.WinForms.Guna2Button btnCuspdate;
-        private Guna.UI2.WinForms.Guna2Button btnCusSearch;
         private Guna.UI2.WinForms.Guna2Button btnCussave;
         private Guna.UI2.WinForms.Guna2TextBox txtCusCon;
         private Guna.UI2.WinForms.Guna2TextBox txtCusName;
@@ -350,6 +334,7 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2TextBox searchBox;
     }
 }
 

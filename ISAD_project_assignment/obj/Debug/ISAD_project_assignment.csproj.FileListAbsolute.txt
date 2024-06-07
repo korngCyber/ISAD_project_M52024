@@ -16,3 +16,4 @@ D:\RUPP\year3\ISAD\ISAD_project_assignment\ISAD_project_assignment\obj\Debug\ISA
 D:\RUPP\year3\ISAD\ISAD_project_assignment\ISAD_project_assignment\obj\Debug\ISAD_project_assignment.ContainerForm.resources
 D:\RUPP\year3\ISAD\ISAD_project_assignment\ISAD_project_assignment\obj\Debug\ISAD_project_assignment.register.resources
 D:\RUPP\year3\ISAD\ISAD_project_assignment\ISAD_project_assignment\obj\Debug\ISAD_project_assignment.signin.resources
+D:\RUPP\year3\ISAD\ISAD_project_assignment\ISAD_project_assignment\obj\Debug\ISAD_project_assignment.splashFromcs.resources

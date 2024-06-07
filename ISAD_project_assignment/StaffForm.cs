@@ -4,10 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace ISAD_project_assignment
@@ -35,27 +35,39 @@ namespace ISAD_project_assignment
             comboStaDOB.Text = "";
             checkStaWork.Checked = false;
             btnStaMale.Checked = false;
-            btnStaFemale.Checked = false;   
+            btnStaFemale.Checked = false;  
+          
+        }
+        private Image GetImage(byte[] img)
+        {
+            MemoryStream stream = new MemoryStream(img);
+            return Image.FromStream(stream);
+
         }
         public void FetchData()
         {
-            TableSta.DataSource = null;
-            _command = new SqlCommand("fetchStaff", _connectDatabase.con);
-            _command.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                _command = new SqlCommand("fetchStaff", _connectDatabase.con);
+                _command.CommandType = CommandType.StoredProcedure;
 
+                SqlDependency _sqlDependency = new SqlDependency(_command);
+                _sqlDependency.OnChange += OnChange;
 
-            SqlDependency _sqlDependency = new SqlDependency(_command);
-            //_sqlDependency.OnChange += OnChangeEventHandler(OnChange);
-            _sqlDependency.OnChange += OnChange;
+                _adapter = new SqlDataAdapter(_command);
+                _datable = new DataTable();
+                _adapter.Fill(_datable);
+                TableSta.DataSource = _datable;
 
-
-            _adapter = new SqlDataAdapter(_command);
-            _datable = new DataTable();
-            _adapter.Fill(_datable);
-
-            TableSta.DataSource = _datable;
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching data: " + ex.Message);
+            }
         }
+
+     
+
         public void OnChange(object caller, SqlNotificationEventArgs e)
         {
             if (this.InvokeRequired)
@@ -116,7 +128,10 @@ namespace ISAD_project_assignment
             {
                 checkStaWork.Checked = false;
             }
-           // checkStaWork.Checked = (bool)row.Cells[6].Value;
+            // checkStaWork.Checked = (bool)row.Cells[6].Value;
+            //cell[7] 
+          
+
 
 
 
@@ -125,14 +140,15 @@ namespace ISAD_project_assignment
         private void btnStasave_Click(object sender, EventArgs e)
         {
             Boolean stopwork;
+        
             _command = new SqlCommand("AddStaff", _connectDatabase.con);
             _command.CommandType = CommandType.StoredProcedure;
             _command.Parameters.AddWithValue("@Sname", txtStaName.Text);
-            if (btnStaMale.Enabled)
+            if (btnStaMale.Checked)
             {
                 txtGender.Text = 'M'.ToString();
             }
-            if(btnStaFemale.Enabled)
+            if(btnStaFemale.Checked)
             {
                 txtGender.Text = 'F'.ToString();
             }
@@ -140,6 +156,7 @@ namespace ISAD_project_assignment
             _command.Parameters.AddWithValue("@Sdob", comboStaDOB.Value);
             _command.Parameters.AddWithValue("@Spo", comboStaPos.Text);
             _command.Parameters.AddWithValue("@Ssa", txtStaSlary.Text);
+
             if(checkStaWork.Checked) 
             { 
                 stopwork = true;
@@ -147,6 +164,7 @@ namespace ISAD_project_assignment
                 stopwork = false; 
             }   
             _command.Parameters.AddWithValue("@Ssw", stopwork);
+    
 
             _command.ExecuteNonQuery();
             clearTxt();
@@ -169,14 +187,15 @@ namespace ISAD_project_assignment
         private void btnStaupdate_Click(object sender, EventArgs e)
         {
             Boolean stopwork;
+           
             _command = new SqlCommand("UpdateStaff", _connectDatabase.con);
             _command.CommandType = CommandType.StoredProcedure;
             _command.Parameters.AddWithValue("@Sname", txtStaName.Text);
-            if (btnStaMale.Enabled)
+            if (btnStaMale.Checked)
             {
                 txtGender.Text = 'M'.ToString();
             }
-            if (btnStaFemale.Enabled)
+            if (btnStaFemale.Checked)
             {
                 txtGender.Text = 'F'.ToString();
             }
@@ -185,6 +204,7 @@ namespace ISAD_project_assignment
             _command.Parameters.AddWithValue("@Spo", comboStaPos.Text);
             _command.Parameters.AddWithValue("@Ssa", txtStaSlary.Text);
             _command.Parameters.AddWithValue("@Sid", txtStaID.Text);
+         
             if (checkStaWork.Checked)
             {
                 stopwork = true;
@@ -207,5 +227,29 @@ namespace ISAD_project_assignment
             containerForm.Show();
             this.Close();
         }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (TableSta.DataSource is DataTable dataTable)
+            {
+                if (int.TryParse(searchBox.Text, out int id))
+                {
+                    dataTable.DefaultView.RowFilter = string.Format("ID = {0}", id);
+                }
+                else
+                {
+                    dataTable.DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchBox.Text);
+                }
+            }
+        }
+        private void searchBox_Enter(object sender, EventArgs e)
+        {
+            if (searchBox.Text == "Search")
+            {
+                searchBox.Text = "";
+            }
+        }
+
+        
     }
 }

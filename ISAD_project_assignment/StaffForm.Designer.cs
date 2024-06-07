@@ -35,11 +35,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.CombosupSearch = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnStaDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnstaExit = new Guna.UI2.WinForms.Guna2Button();
             this.btnStaupdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnStaSearch = new Guna.UI2.WinForms.Guna2Button();
             this.btnStasave = new Guna.UI2.WinForms.Guna2Button();
             this.txtStaID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,6 +52,7 @@
             this.checkStaWork = new Guna.UI2.WinForms.Guna2CheckBox();
             this.txtGender = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TableSta)).BeginInit();
             this.txtGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -73,7 +72,7 @@
             this.txtStaSlary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStaSlary.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtStaSlary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStaSlary.Location = new System.Drawing.Point(1072, 294);
+            this.txtStaSlary.Location = new System.Drawing.Point(1036, 294);
             this.txtStaSlary.Name = "txtStaSlary";
             this.txtStaSlary.PasswordChar = '\0';
             this.txtStaSlary.PlaceholderText = "";
@@ -95,7 +94,7 @@
             this.txtStaName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStaName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtStaName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStaName.Location = new System.Drawing.Point(558, 240);
+            this.txtStaName.Location = new System.Drawing.Point(522, 240);
             this.txtStaName.Name = "txtStaName";
             this.txtStaName.PasswordChar = '\0';
             this.txtStaName.PlaceholderText = "";
@@ -122,7 +121,7 @@
             "Security",
             "HR",
             "Admin"});
-            this.comboStaPos.Location = new System.Drawing.Point(1072, 230);
+            this.comboStaPos.Location = new System.Drawing.Point(1036, 230);
             this.comboStaPos.Name = "comboStaPos";
             this.comboStaPos.Size = new System.Drawing.Size(285, 36);
             this.comboStaPos.TabIndex = 63;
@@ -131,7 +130,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(881, 237);
+            this.label5.Location = new System.Drawing.Point(845, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 29);
             this.label5.TabIndex = 62;
@@ -141,7 +140,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(367, 247);
+            this.label4.Location = new System.Drawing.Point(331, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 29);
             this.label4.TabIndex = 61;
@@ -151,31 +150,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(881, 301);
+            this.label3.Location = new System.Drawing.Point(845, 301);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 29);
             this.label3.TabIndex = 60;
             this.label3.Text = "Staff Salary";
-            // 
-            // CombosupSearch
-            // 
-            this.CombosupSearch.BackColor = System.Drawing.Color.Transparent;
-            this.CombosupSearch.BorderRadius = 20;
-            this.CombosupSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CombosupSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CombosupSearch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CombosupSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CombosupSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.CombosupSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.CombosupSearch.ItemHeight = 30;
-            this.CombosupSearch.Items.AddRange(new object[] {
-            "ID",
-            "NAME",
-            "CONTACT"});
-            this.CombosupSearch.Location = new System.Drawing.Point(803, 775);
-            this.CombosupSearch.Name = "CombosupSearch";
-            this.CombosupSearch.Size = new System.Drawing.Size(153, 36);
-            this.CombosupSearch.TabIndex = 59;
             // 
             // btnStaDelete
             // 
@@ -190,7 +169,7 @@
             this.btnStaDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnStaDelete.ForeColor = System.Drawing.Color.Black;
             this.btnStaDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnStaDelete.Image")));
-            this.btnStaDelete.Location = new System.Drawing.Point(615, 733);
+            this.btnStaDelete.Location = new System.Drawing.Point(582, 733);
             this.btnStaDelete.Name = "btnStaDelete";
             this.btnStaDelete.Size = new System.Drawing.Size(146, 37);
             this.btnStaDelete.TabIndex = 58;
@@ -212,7 +191,7 @@
             this.btnstaExit.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnstaExit.ForeColor = System.Drawing.Color.Black;
             this.btnstaExit.Image = ((System.Drawing.Image)(resources.GetObject("btnstaExit.Image")));
-            this.btnstaExit.Location = new System.Drawing.Point(983, 732);
+            this.btnstaExit.Location = new System.Drawing.Point(1015, 732);
             this.btnstaExit.Name = "btnstaExit";
             this.btnstaExit.Size = new System.Drawing.Size(150, 38);
             this.btnstaExit.TabIndex = 57;
@@ -233,33 +212,13 @@
             this.btnStaupdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnStaupdate.ForeColor = System.Drawing.Color.Black;
             this.btnStaupdate.Image = ((System.Drawing.Image)(resources.GetObject("btnStaupdate.Image")));
-            this.btnStaupdate.Location = new System.Drawing.Point(425, 733);
+            this.btnStaupdate.Location = new System.Drawing.Point(361, 732);
             this.btnStaupdate.Name = "btnStaupdate";
             this.btnStaupdate.Size = new System.Drawing.Size(154, 37);
             this.btnStaupdate.TabIndex = 56;
             this.btnStaupdate.Text = "UPDATE";
             this.btnStaupdate.UseTransparentBackground = true;
             this.btnStaupdate.Click += new System.EventHandler(this.btnStaupdate_Click);
-            // 
-            // btnStaSearch
-            // 
-            this.btnStaSearch.AutoRoundedCorners = true;
-            this.btnStaSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnStaSearch.BorderRadius = 17;
-            this.btnStaSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnStaSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnStaSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnStaSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnStaSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.btnStaSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnStaSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnStaSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnStaSearch.Image")));
-            this.btnStaSearch.Location = new System.Drawing.Point(803, 732);
-            this.btnStaSearch.Name = "btnStaSearch";
-            this.btnStaSearch.Size = new System.Drawing.Size(153, 37);
-            this.btnStaSearch.TabIndex = 55;
-            this.btnStaSearch.Text = "SEARCH";
-            this.btnStaSearch.UseTransparentBackground = true;
             // 
             // btnStasave
             // 
@@ -274,7 +233,7 @@
             this.btnStasave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnStasave.ForeColor = System.Drawing.Color.Black;
             this.btnStasave.Image = ((System.Drawing.Image)(resources.GetObject("btnStasave.Image")));
-            this.btnStasave.Location = new System.Drawing.Point(227, 733);
+            this.btnStasave.Location = new System.Drawing.Point(148, 733);
             this.btnStasave.Name = "btnStasave";
             this.btnStasave.Size = new System.Drawing.Size(155, 37);
             this.btnStasave.TabIndex = 54;
@@ -296,7 +255,7 @@
             this.txtStaID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStaID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtStaID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStaID.Location = new System.Drawing.Point(558, 180);
+            this.txtStaID.Location = new System.Drawing.Point(522, 180);
             this.txtStaID.Name = "txtStaID";
             this.txtStaID.PasswordChar = '\0';
             this.txtStaID.PlaceholderText = "";
@@ -308,7 +267,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(367, 187);
+            this.label2.Location = new System.Drawing.Point(331, 187);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 29);
             this.label2.TabIndex = 52;
@@ -320,11 +279,11 @@
             this.TableSta.AllowUserToDeleteRows = false;
             this.TableSta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TableSta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TableSta.Location = new System.Drawing.Point(45, 417);
+            this.TableSta.Location = new System.Drawing.Point(35, 417);
             this.TableSta.Name = "TableSta";
             this.TableSta.ReadOnly = true;
             this.TableSta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TableSta.Size = new System.Drawing.Size(1344, 296);
+            this.TableSta.Size = new System.Drawing.Size(1309, 296);
             this.TableSta.TabIndex = 51;
             this.TableSta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelSup_CellClick);
             // 
@@ -343,7 +302,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(881, 352);
+            this.label6.Location = new System.Drawing.Point(845, 352);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(132, 29);
             this.label6.TabIndex = 66;
@@ -353,7 +312,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(881, 178);
+            this.label7.Location = new System.Drawing.Point(845, 178);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 29);
             this.label7.TabIndex = 67;
@@ -363,7 +322,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(367, 346);
+            this.label8.Location = new System.Drawing.Point(331, 346);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(159, 29);
             this.label8.TabIndex = 68;
@@ -420,7 +379,7 @@
             this.comboStaDOB.FillColor = System.Drawing.Color.White;
             this.comboStaDOB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboStaDOB.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.comboStaDOB.Location = new System.Drawing.Point(1072, 168);
+            this.comboStaDOB.Location = new System.Drawing.Point(1036, 168);
             this.comboStaDOB.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.comboStaDOB.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.comboStaDOB.Name = "comboStaDOB";
@@ -436,7 +395,7 @@
             this.checkStaWork.CheckedState.BorderThickness = 0;
             this.checkStaWork.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.checkStaWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.checkStaWork.Location = new System.Drawing.Point(1072, 352);
+            this.checkStaWork.Location = new System.Drawing.Point(1036, 352);
             this.checkStaWork.Name = "checkStaWork";
             this.checkStaWork.Size = new System.Drawing.Size(144, 33);
             this.checkStaWork.TabIndex = 72;
@@ -452,7 +411,7 @@
             this.txtGender.Controls.Add(this.btnStaFemale);
             this.txtGender.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtGender.Location = new System.Drawing.Point(558, 308);
+            this.txtGender.Location = new System.Drawing.Point(522, 308);
             this.txtGender.Name = "txtGender";
             this.txtGender.Size = new System.Drawing.Size(285, 77);
             this.txtGender.TabIndex = 73;
@@ -462,19 +421,47 @@
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(45, 93);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 95);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(301, 316);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 74;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // searchBox
+            // 
+            this.searchBox.AutoRoundedCorners = true;
+            this.searchBox.BorderRadius = 17;
+            this.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.DefaultText = "Search";
+            this.searchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.searchBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.ForeColor = System.Drawing.Color.Black;
+            this.searchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchBox.IconLeft")));
+            this.searchBox.Location = new System.Drawing.Point(797, 733);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.PasswordChar = '\0';
+            this.searchBox.PlaceholderText = "";
+            this.searchBox.SelectedText = "";
+            this.searchBox.Size = new System.Drawing.Size(165, 36);
+            this.searchBox.TabIndex = 75;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1405, 827);
+            this.ClientSize = new System.Drawing.Size(1374, 827);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.txtGender);
             this.Controls.Add(this.checkStaWork);
@@ -488,11 +475,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.CombosupSearch);
             this.Controls.Add(this.btnStaDelete);
             this.Controls.Add(this.btnstaExit);
             this.Controls.Add(this.btnStaupdate);
-            this.Controls.Add(this.btnStaSearch);
             this.Controls.Add(this.btnStasave);
             this.Controls.Add(this.txtStaID);
             this.Controls.Add(this.label2);
@@ -520,11 +505,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2ComboBox CombosupSearch;
         private Guna.UI2.WinForms.Guna2Button btnStaDelete;
         private Guna.UI2.WinForms.Guna2Button btnstaExit;
         private Guna.UI2.WinForms.Guna2Button btnStaupdate;
-        private Guna.UI2.WinForms.Guna2Button btnStaSearch;
         private Guna.UI2.WinForms.Guna2Button btnStasave;
         private Guna.UI2.WinForms.Guna2TextBox txtStaID;
         private System.Windows.Forms.Label label2;
@@ -539,5 +522,6 @@
         private Guna.UI2.WinForms.Guna2CheckBox checkStaWork;
         private Guna.UI2.WinForms.Guna2GroupBox txtGender;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2TextBox searchBox;
     }
 }

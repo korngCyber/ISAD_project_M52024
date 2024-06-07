@@ -16,8 +16,8 @@ namespace ISAD_project_assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-           Application.Run(new signin());
+           // Application.Run(new StaffForm());
+             Application.Run(new splashFromcs());
         }
     }
 }

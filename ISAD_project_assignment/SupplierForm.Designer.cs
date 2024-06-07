@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.CombosupSearch = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnSupDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnsupExit = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuppdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSupSearch = new Guna.UI2.WinForms.Guna2Button();
             this.btnSupsave = new Guna.UI2.WinForms.Guna2Button();
             this.txtSupID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +45,7 @@
             this.txtSupName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSubCon = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TableSup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,26 +69,6 @@
             this.label3.Size = new System.Drawing.Size(207, 29);
             this.label3.TabIndex = 43;
             this.label3.Text = "Supplier Contact";
-            // 
-            // CombosupSearch
-            // 
-            this.CombosupSearch.BackColor = System.Drawing.Color.Transparent;
-            this.CombosupSearch.BorderRadius = 20;
-            this.CombosupSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CombosupSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CombosupSearch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CombosupSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CombosupSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.CombosupSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.CombosupSearch.ItemHeight = 30;
-            this.CombosupSearch.Items.AddRange(new object[] {
-            "ID",
-            "NAME",
-            "CONTACT"});
-            this.CombosupSearch.Location = new System.Drawing.Point(534, 756);
-            this.CombosupSearch.Name = "CombosupSearch";
-            this.CombosupSearch.Size = new System.Drawing.Size(122, 36);
-            this.CombosupSearch.TabIndex = 42;
             // 
             // btnSupDelete
             // 
@@ -150,24 +129,6 @@
             this.btnSuppdate.Text = "UPDATE";
             this.btnSuppdate.Click += new System.EventHandler(this.btnSuppdate_Click);
             // 
-            // btnSupSearch
-            // 
-            this.btnSupSearch.AutoRoundedCorners = true;
-            this.btnSupSearch.BorderRadius = 20;
-            this.btnSupSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSupSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSupSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSupSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSupSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(7)))));
-            this.btnSupSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSupSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSupSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSupSearch.Image")));
-            this.btnSupSearch.Location = new System.Drawing.Point(534, 707);
-            this.btnSupSearch.Name = "btnSupSearch";
-            this.btnSupSearch.Size = new System.Drawing.Size(122, 43);
-            this.btnSupSearch.TabIndex = 38;
-            this.btnSupSearch.Text = "SEARCH";
-            // 
             // btnSupsave
             // 
             this.btnSupsave.AutoRoundedCorners = true;
@@ -225,14 +186,14 @@
             this.TableSup.AllowUserToDeleteRows = false;
             this.TableSup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TableSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TableSup.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TableSup.DefaultCellStyle = dataGridViewCellStyle3;
             this.TableSup.Location = new System.Drawing.Point(42, 381);
             this.TableSup.Name = "TableSup";
             this.TableSup.ReadOnly = true;
@@ -340,12 +301,41 @@
             this.guna2PictureBox1.TabIndex = 50;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // searchBox
+            // 
+            this.searchBox.Animated = true;
+            this.searchBox.AutoRoundedCorners = true;
+            this.searchBox.BorderRadius = 20;
+            this.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.DefaultText = "Search";
+            this.searchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(7)))));
+            this.searchBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.ForeColor = System.Drawing.Color.White;
+            this.searchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchBox.IconLeft")));
+            this.searchBox.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.Location = new System.Drawing.Point(527, 708);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.PasswordChar = '\0';
+            this.searchBox.PlaceholderText = "";
+            this.searchBox.SelectedText = "";
+            this.searchBox.Size = new System.Drawing.Size(129, 42);
+            this.searchBox.TabIndex = 51;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
+            // 
             // SupplierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(227)))), ((int)(((byte)(174)))));
             this.ClientSize = new System.Drawing.Size(954, 802);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.txtSubCon);
             this.Controls.Add(this.txtSupName);
@@ -353,11 +343,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.CombosupSearch);
             this.Controls.Add(this.btnSupDelete);
             this.Controls.Add(this.btnsupExit);
             this.Controls.Add(this.btnSuppdate);
-            this.Controls.Add(this.btnSupSearch);
             this.Controls.Add(this.btnSupsave);
             this.Controls.Add(this.txtSupID);
             this.Controls.Add(this.label2);
@@ -379,11 +367,9 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2ComboBox CombosupSearch;
         private Guna.UI2.WinForms.Guna2Button btnSupDelete;
         private Guna.UI2.WinForms.Guna2Button btnsupExit;
         private Guna.UI2.WinForms.Guna2Button btnSuppdate;
-        private Guna.UI2.WinForms.Guna2Button btnSupSearch;
         private Guna.UI2.WinForms.Guna2Button btnSupsave;
         private Guna.UI2.WinForms.Guna2TextBox txtSupID;
         private System.Windows.Forms.Label label2;
@@ -394,5 +380,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSupName;
         private Guna.UI2.WinForms.Guna2TextBox txtSubCon;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2TextBox searchBox;
     }
 }

@@ -60,6 +60,7 @@
             this.linktoSingup.TabIndex = 29;
             this.linktoSingup.TabStop = true;
             this.linktoSingup.Text = "Sign Up";
+            this.linktoSingup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linktoSingup_LinkClicked);
             // 
             // label7
             // 
@@ -123,7 +124,7 @@
             this.txtPassword.AutoRoundedCorners = true;
             this.txtPassword.BorderRadius = 17;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.DefaultText = "";
+            this.txtPassword.DefaultText = "Password";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -140,6 +141,8 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(382, 36);
             this.txtPassword.TabIndex = 23;
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // txtEmail
             // 
@@ -147,7 +150,7 @@
             this.txtEmail.AutoRoundedCorners = true;
             this.txtEmail.BorderRadius = 17;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultText = "";
+            this.txtEmail.DefaultText = "exmaple@gmail.com";
             this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -165,6 +168,8 @@
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(382, 36);
             this.txtEmail.TabIndex = 21;
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // label4
             // 

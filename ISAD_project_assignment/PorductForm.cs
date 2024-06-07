@@ -147,5 +147,30 @@ namespace ISAD_project_assignment
             containerForm.Show();
             this.Close();
         }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (TablePro.DataSource is DataTable dataTable)
+            {
+                if (int.TryParse(searchBox.Text, out int id))
+                {
+                    dataTable.DefaultView.RowFilter = string.Format("ID = {0}", id);
+                }
+                else
+                {
+                    dataTable.DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchBox.Text);
+                }
+            }
+        }
+
+        
+
+        private void searchBox_Enter(object sender, EventArgs e)
+        {
+            if (searchBox.Text == "Search")
+            {
+                searchBox.Text = "";
+            }
+        }
     }
 }

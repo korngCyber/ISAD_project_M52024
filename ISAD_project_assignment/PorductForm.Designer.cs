@@ -37,7 +37,6 @@
             this.btnProdelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnProExit = new Guna.UI2.WinForms.Guna2Button();
             this.btnProUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnProSearch = new Guna.UI2.WinForms.Guna2Button();
             this.btnProsave = new Guna.UI2.WinForms.Guna2Button();
             this.txtProID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.txtProUnitPRice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.searchBox = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TablePro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -185,25 +185,6 @@
             this.btnProUpdate.TabIndex = 56;
             this.btnProUpdate.Text = "UPDATE";
             this.btnProUpdate.Click += new System.EventHandler(this.btnProUpdate_Click);
-            // 
-            // btnProSearch
-            // 
-            this.btnProSearch.AutoRoundedCorners = true;
-            this.btnProSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnProSearch.BorderRadius = 17;
-            this.btnProSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnProSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnProSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnProSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnProSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(78)))), ((int)(((byte)(237)))));
-            this.btnProSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnProSearch.ForeColor = System.Drawing.Color.White;
-            this.btnProSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnProSearch.Image")));
-            this.btnProSearch.Location = new System.Drawing.Point(1048, 325);
-            this.btnProSearch.Name = "btnProSearch";
-            this.btnProSearch.Size = new System.Drawing.Size(128, 37);
-            this.btnProSearch.TabIndex = 55;
-            this.btnProSearch.Text = "SEARCH";
             // 
             // btnProsave
             // 
@@ -350,12 +331,39 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
+            // searchBox
+            // 
+            this.searchBox.AutoRoundedCorners = true;
+            this.searchBox.BorderRadius = 17;
+            this.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.DefaultText = "Search";
+            this.searchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(78)))), ((int)(((byte)(237)))));
+            this.searchBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.ForeColor = System.Drawing.Color.White;
+            this.searchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("searchBox.IconLeft")));
+            this.searchBox.Location = new System.Drawing.Point(1048, 326);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.PasswordChar = '\0';
+            this.searchBox.PlaceholderText = "";
+            this.searchBox.SelectedText = "";
+            this.searchBox.Size = new System.Drawing.Size(128, 36);
+            this.searchBox.TabIndex = 70;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
+            // 
             // PorductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(171)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1242, 805);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtProUnitPRice);
@@ -368,7 +376,6 @@
             this.Controls.Add(this.btnProdelete);
             this.Controls.Add(this.btnProExit);
             this.Controls.Add(this.btnProUpdate);
-            this.Controls.Add(this.btnProSearch);
             this.Controls.Add(this.btnProsave);
             this.Controls.Add(this.txtProID);
             this.Controls.Add(this.label2);
@@ -396,7 +403,6 @@
         private Guna.UI2.WinForms.Guna2Button btnProdelete;
         private Guna.UI2.WinForms.Guna2Button btnProExit;
         private Guna.UI2.WinForms.Guna2Button btnProUpdate;
-        private Guna.UI2.WinForms.Guna2Button btnProSearch;
         private Guna.UI2.WinForms.Guna2Button btnProsave;
         private Guna.UI2.WinForms.Guna2TextBox txtProID;
         private System.Windows.Forms.Label label2;
@@ -406,5 +412,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtProUnitPRice;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2TextBox searchBox;
     }
 }

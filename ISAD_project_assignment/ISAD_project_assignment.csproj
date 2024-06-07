@@ -85,6 +85,12 @@
     <Compile Include="signin.Designer.cs">
       <DependentUpon>signin.cs</DependentUpon>
     </Compile>
+    <Compile Include="splashFromcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="splashFromcs.Designer.cs">
+      <DependentUpon>splashFromcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaffForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="signin.resx">
       <DependentUpon>signin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="splashFromcs.resx">
+      <DependentUpon>splashFromcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffForm.resx">
       <DependentUpon>StaffForm.cs</DependentUpon>
